@@ -1,6 +1,7 @@
 use crate::commands::optimize_result::{reduce_optimize_results, OptimizeResult};
 use crate::region_loader::region::Region;
 use crate::world::get_region_files::get_region_files;
+use chrono::Local;
 use flate2::Compression;
 use indicatif::{ProgressBar, ProgressStyle};
 use rayon::iter::ParallelIterator;
@@ -62,7 +63,7 @@ fn optimize_write(
                 std::fs::remove_file(region_file_path)?;
             } else if region.is_modified() {
                 // Only write the region file if it has been modified
-                let bytes = region.to_bytes(compression);
+                let bytes = region.to_bytes_blinear(Local::now().timestamp_millis(), 6);
                 std::fs::write(region_file_path, bytes)?;
             }
         }

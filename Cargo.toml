@@ -9,3 +9,6 @@ flate2 = { version = "1", default-features = false, features = ["zlib-ng"] }
 indicatif = "0.17"
 rayon = "1.10"
 thiserror = "2.0.3"
+zstd = "0.13"
+twox-hash = "1.1.2"
+chrono = "0.4"
