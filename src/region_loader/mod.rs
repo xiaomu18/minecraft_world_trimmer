@@ -1,3 +1,3 @@
 mod chunk_loader;
-mod location;
+mod sector_info;
 pub mod region;

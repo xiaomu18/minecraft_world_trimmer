@@ -31,7 +31,7 @@ fn get_mca_files(region_directory: PathBuf) -> Vec<PathBuf> {
             dir.flatten()
                 .map(|entry| entry.path())
                 // mcc files are not supported yet
-                .filter(|path| path.extension().and_then(|ext| ext.to_str()) == Some("mca"))
+                .filter(|path| path.extension().and_then(|ext| ext.to_str()) == Some("b_linear"))
                 .collect::<Vec<_>>()
         })
         .unwrap_or_default()

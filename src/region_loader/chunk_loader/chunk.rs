@@ -1,7 +1,7 @@
 use crate::nbt::binary_reader::BinaryReader;
 use crate::nbt::parse::parse_tag;
 use crate::nbt::tag::Tag;
-use crate::region_loader::location::SectorInfo;
+use crate::region_loader::sector_info::SectorInfo;
 
 #[derive(PartialEq, Debug, Clone)]
 pub struct Chunk {
