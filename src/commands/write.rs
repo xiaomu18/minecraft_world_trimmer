@@ -68,8 +68,8 @@ fn optimize_write(
             }
         }
         Err(_) => {
-            result.deleted_regions += 1;
-            std::fs::remove_file(region_file_path)?;
+            // might be old linear v1, format
+            // do not process it
         }
     }
 

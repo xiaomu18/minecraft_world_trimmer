@@ -50,7 +50,8 @@ fn optimize_read(region_file_path: &PathBuf) -> std::io::Result<OptimizeResult> 
             }
         }
         Err(_) => {
-            result.deleted_regions += 1;
+            // might be old linear v1, format
+            // do not process it
         }
     }
 
