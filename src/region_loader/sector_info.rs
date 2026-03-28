@@ -1,14 +1,14 @@
 #[derive(Debug, Clone, Copy, PartialEq)]
 pub struct SectorInfo {
     sector_index: u32,
-    timestamp: u32,
+    timestamp: i64,
 }
 
 impl SectorInfo {
     pub fn from_blinear_sector_idx(sector_index: i32, timestamp: i64) -> Self {
         Self {
             sector_index: sector_index as u32,
-            timestamp: timestamp as u32
+            timestamp,
         }
     }
 
@@ -16,7 +16,7 @@ impl SectorInfo {
         self.sector_index
     }
 
-    pub fn get_timestamp(&self) -> u32 {
+    pub fn get_timestamp(&self) -> i64 {
         self.timestamp
     }
 }
